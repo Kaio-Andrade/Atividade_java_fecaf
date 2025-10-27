@@ -41,7 +41,7 @@ public class ClienteController {
             while (resultSet.next()) {
                 int idCliente = resultSet.getInt("idCliente");
                 String nome = resultSet.getString("nome");
-                String CPF  = resultSet.getString("CPF");    // CPF ?
+                String CPF  = resultSet.getString("CPF");
                 String endereco = resultSet.getString("endereco");
                 int telefone = resultSet.getInt("telefone");
 
@@ -53,6 +53,7 @@ public class ClienteController {
                 System.out.println("tel: " + telefone);
                 System.out.println("/#################################/");
 
+                // instanciando a classe cliente
                 Cliente cliente = new Cliente();
                 cliente.setIdCliente(idCliente);
                 cliente.setNome(nome);
@@ -60,6 +61,7 @@ public class ClienteController {
                 cliente.setEndereco(endereco);
                 cliente.setTelefone(telefone);
 
+                // Adicionando objeto na lista criada.
                  clientes.add(cliente);
 
 
@@ -78,8 +80,10 @@ public class ClienteController {
 
 
     public Cliente consultarCPF(String CPF){
+       // chamando a função para obter a lista.
         List<Cliente> clientes = listarClientes();
 
+        // para cada cliente, verificamos  se o cpf bate com o informado.
         for(Cliente cliente: clientes){
 
             if(cliente.getCPF().equals(CPF)){

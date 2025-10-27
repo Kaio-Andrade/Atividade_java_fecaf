@@ -12,7 +12,7 @@ public class Conexao {
         this.server = "localhost";
         this.banco = "db_java";
         this.user = "root";
-        this.password = "Kr17@@05";
+        this.password = "12313"; // ficaria a senha do banco de dados.
     }
 
 
